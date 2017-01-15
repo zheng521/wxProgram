@@ -2,7 +2,7 @@
   height: 100%;
 }
 .top-bar {
-  height: 36px;
+  height: 72rpx;
   background: #444;
   width:100%;
   position: fixed;
@@ -14,46 +14,49 @@
   width: 20%;
   color: #80bd01;
   text-align: center;
-  line-height: 36px;
-  font-size: 14px;
+  line-height: 72rpx;
+  font-size: 28rpx;
+}
+.active {
+  color: #fff;
 }
 .posts-list {
-  margin-top: 36px;
+  margin-top: 72rpx;
 }
 .posts-item {
   position: relative;
-  padding: 10px 0 10px 10px;
-  font-size: 14px;
-  padding-right: 10px;
+  padding: 20rpx 0 20rpx 20rpx;
+  font-size: 28rpx;
+  padding-right: 20rpx;
   background: #fff;
   border-bottom: 1px solid #80bd01;
 }
 .author {
   overflow: hidden;
-  padding-bottom: 5px;
+  padding-bottom: 10rpx;
 }
 .author-avatar {
-  width: 30px;
-  height: 30px;
-  border-radius: 3px;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 6rpx;
   float: left;
 }
 .author-name {
   color: #666;
   float: left;
-  line-height:30px;
-  margin-left:5px;
-  font-size: 12px;
+  line-height:60rpx;
+  margin-left:10rpx;
+  font-size: 24rpx;
 }
 .posts-tag {
   background: #fff;
   border: 1px #80bd01 solid;
-  padding: 2px 4px;
-  border-radius: 3px;
+  padding: 4rpx 8rpx;
+  border-radius: 6rpx;
   color: #80bd01;
-  font-size: 12px;
+  font-size: 24rpx;
   float: left;
-  margin:6px 0px 8px 5px;
+  margin:12rpx 0px 16rpx 10rpx;
 }
 .hot {
   border: 1px #e25242 solid;
@@ -61,36 +64,36 @@
 }
 .posts-last-reply {
   float: right;
-  line-height:30px;
+  line-height:60rpx;
   color: #666;
-  font-size: 12px;
+  font-size: 24rpx;
 }
 .bar-info {
   overflow: hidden;
-  height:14px;
+  height:28rpx;
 }
 .bar-info-item {
   float: right;
-  line-height:14px;
-  margin-left: 5px;
+  line-height:28rpx;
+  margin-left: 10rpx;
 }
 .bar-info-item-icon {
-  width: 12px;
-  height: 12px;
+  width: 24rpx;
+  height: 24rpx;
   vertical-align:middle;
-  margin-right: 2px;
+  margin-right: 4rpx;
 }
 .bar-info-item-number {
   display:inline-block;
   color: #999;
-  font-size: 12px;
-  line-height:14px;
+  font-size: 24rpx;
+  line-height:28rpx;
   vertical-align:middle;
 }
 .posts-title {
   color: #2c3e50;
-  font-size: 16px;
+  font-size: 32rpx;
   line-height: 1.5;
   font-weight: bold;
-  padding-bottom: 5px;
+  padding-bottom: 10rpx;
 }

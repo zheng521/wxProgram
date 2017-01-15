@@ -3,12 +3,19 @@ var Api = require('../../utils/api.js');
 Page({
   data:{
     title: '首页列表',
-    postsList: []
+    postsList: [],
+    allActive: 'active',
+    goodActive: '',
+    shareActive:'',
+    askActive: '',
+    jobActive: ''
   },
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
-    console.log('123');
+  onLoad: function () {
     this.fetchData();
+  },
+  onPullDownRefresh: function () {
+    this.fetchData();
+    console.log('下拉刷新', new Date());
   },
   fetchData: function(data) {
     if(!data) data = {};
@@ -19,7 +26,6 @@ Page({
       method: 'GET',
       success: function(res){
         // success
-        console.log(res);
         that.setData({postsList: res.data.data})
       },
       fail: function() {
@@ -33,6 +39,18 @@ Page({
   onTapTag: function(e) {
     var self = this;
     var tab = e.currentTarget.id;
+    // 头部tap增加选中样式
+    if(tab == 'all') {
+      self.setData({allActive: 'active',goodActive: '', shareActive:'', askActive: '',jobActive: ''})
+    }else if (tab == 'good') {
+      self.setData({allActive: '',goodActive: 'active', shareActive:'', askActive: '',jobActive: ''})      
+    }else if (tab == 'share') {
+      self.setData({allActive: '',goodActive: '', shareActive:'active', askActive: '',jobActive: ''})      
+    }else if(tab == 'ask'){
+      self.setData({allActive: '',goodActive: '', shareActive:'', askActive: 'active',jobActive: ''})      
+    }else {
+      self.setData({allActive: '',goodActive: '', shareActive:'', askActive: '',jobActive: 'active'})      
+    }
     self.setData({
       tab: tab
     });
@@ -43,7 +61,7 @@ Page({
     }
   },
   lower: function (e) {
-    var self = this;
+    var self = this
     self.setData({
       page: self.data.page + 1
     });

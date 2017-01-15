@@ -1,21 +1,39 @@
 /**index.wxss**/
+.container {
+  width: 750rpx;
+  display: block;
+  height: 100%;
+  background: url(../../images/login.png) no-repeat;
+  background-size: cover;
+}
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  text-align: center;
+  height: 200rpx;
+  padding-top: 450rpx;
+}
+.userinfo-avatar {
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 20rpx;
+  margin: 40rpx auto;
   border-radius: 50%;
+  display: block;
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: #fff;
 }
 
 .usermotto {
-  margin-top: 200px;
+  margin-top: 200rpx;
+  text-align: center;
+  color: #fff;
 }

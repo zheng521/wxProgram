@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/topics/topics",
     "pages/index/index",
+    "pages/topics/topics",
     "pages/logs/logs",
     "pages/detail/detail"
   ],
@@ -9,22 +9,23 @@
     "backgroundTextStyle":"black",
     "backgroundColor":"#fff",
     "navigationBarBackgroundColor":"#000",
-    "navigationBarTitleText":"CNODE 应用号版",
+    "navigationBarTitleText":"cnode社区",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh":"true"
   },
   "tabBar": {
-    "color": "#272636",
-    "selectedColor": "#80bd01",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "white",
+    "color": "#fff",
+    "selectedColor": "#FFFFFF",
+    "backgroundColor": "#323556",
+    "borderStyle": "#323556",
+    "paddingTop": "60rpx",
+    "lineHeight": "60rpx",
     "list": [{
-      "pagePath": "pages/topics/topics",
+      "pagePath": "pages/index/index",
       "text": "首页"
-    },
-    {
-      "pagePath":"pages/index/index",
-      "text": "详情"
+    } ,{
+      "pagePath":"pages/topics/topics",
+      "text": "列表页"
     }]
   }
 }
