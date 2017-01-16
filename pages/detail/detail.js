@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 var Api = require('../../utils/api.js')
+var util = require('../../utils/util.js')
 Page({
   data:{
     titile:'详情页',
@@ -14,28 +15,22 @@ Page({
     wx.request({
       url: Api.getTopicByID(options.id, {mdrender:false}), 
       success: function(res){
-        // success
         console.log(res);
-        self.setData({
-          hidden: 'hidden'
+        res.data.data.create_at = util.getDateDiff(new Date(res.data.data.create_at));
+        res.data.data.replies = res.data.data.replies.map(function(item){
+          item.create_at = util.getDateDiff(new Date(item.create_at));
+          return item;
         });
+        // success
         self.setData({
           detail: res.data.data
         });
+        setTimeout(function() {
+          self.setData({
+            hidden: true
+          })
+        }, 300);
       }
     })
   }
-  // fecthData: function(id){
-  //   var self = this;
-  //   wx.request({
-  //     url: Api.getTopicByID(id,{mdrender:false}), 
-  //     success: function(res){
-  //       // success
-  //       console.log(res);
-  //       self.setData({
-  //         detail: res.data.data
-  //       });
-  //     }
-  //   })
-  // }
 })

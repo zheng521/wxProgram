@@ -15,17 +15,21 @@
   },
   "tabBar": {
     "color": "#fff",
-    "selectedColor": "#FFFFFF",
+    "selectedColor": "#F5A623",
     "backgroundColor": "#323556",
     "borderStyle": "#323556",
     "paddingTop": "60rpx",
     "lineHeight": "60rpx",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "首页"
+      "text": "首页",
+      "iconPath": "images/tabBar/my.png",
+      "selectedIconPath": "images/tabBar/my_hl.png"
     } ,{
       "pagePath":"pages/topics/topics",
-      "text": "列表页"
+      "text": "列表页",
+      "iconPath": "images/tabBar/list.png",
+      "selectedIconPath": "images/tabBar/list_hl.png"
     }]
   }
 }

@@ -1,9 +1,13 @@
 // pages/topics/topics.js
 var Api = require('../../utils/api.js');
+var util = require('../../utils/util.js');
 Page({
   data:{
     title: '首页列表',
     postsList: [],
+    hidden: false,
+    page: 1,
+    tab: 'all',
     allActive: 'active',
     goodActive: '',
     shareActive:'',
@@ -18,15 +22,35 @@ Page({
     console.log('下拉刷新', new Date());
   },
   fetchData: function(data) {
+    var self = this;
+    self.setData({
+      hidden: false
+    });
     if(!data) data = {};
     if(!data.page) data.page = 1;
-    var that = this;
+    if(data.page === 1) {
+      self.setData({
+        postsList: []
+      })
+    }
     wx.request({
       url: Api.getTopics(data),
       method: 'GET',
       success: function(res){
+        console.log(res);
         // success
-        that.setData({postsList: res.data.data})
+        self.setData({
+          // postsList: res.data.data
+          postsList: self.data.postsList.concat(res.data.data.map(function(item) {
+            item.last_reply_at = util.getDateDiff(new Date(item.last_reply_at));
+            return item;
+          }))
+        });
+        setTimeout(function(){
+          self.setData({
+            hidden: true
+          });
+        },300)
       },
       fail: function() {
         // fail
@@ -72,7 +96,6 @@ Page({
     }
   },
   redictDetail: function(e) {
-    console.log('详情页');
     var id = e.currentTarget.id,
     url = '../detail/detail?id=' + id;
     wx.navigateTo({
